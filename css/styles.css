@@ -43,6 +43,12 @@ body {
   padding: 96px 0;
 }
 
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
 /* ----------------------- HEADER ------------------------*/
 
 .header {
@@ -53,17 +59,16 @@ body {
 }
 
 .header-container {
-  display: flex;
-  justify-content: center;
 }
 
 .logo-link {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  margin-right: 76px;
+  padding: 16px 0;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -78,79 +83,153 @@ body {
 }
 
 .header-list {
-  display: flex;
+  display: none;
 }
 
-.header-item {
-  margin-right: 40px;
-}
-
-.header-item:last-child {
-  margin-right: 0;
-}
-
-.header-link {
-  position: relative;
-  display: block;
-  padding: 24px 0;
-  font-weight: 500;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.header-link:hover,
-.header-link:focus {
-  color: #404bbf;
-}
-
-.link-studio {
-  color: #404bbf;
-}
-
-.link-studio::after {
-  position: absolute;
-  content: '';
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background: #404bbf;
-  display: block;
-}
-
-.contact {
-  font-style: normal;
-  padding-left: 332px;
+.menu-btn {
+  border: none;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .contact-list {
+  display: none;
+}
+
+/*======================== MOB-MENU ============================*/
+
+.menu-mob {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  padding: 24px 16px 40px 24px;
+  background-color: #fff;
+
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
 }
 
-.contact-item {
-  margin-right: 40px;
+.menu-navig {
+  margin-bottom: 20px;
 }
 
-.contact-item:last-child {
-  margin-right: 0;
+.menu-mob-btn {
+  width: 24px;
+  height: 24px;
+  right: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: rgb(231, 233, 252, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-link {
-  display: block;
-  padding: 24px 0;
-  font-weight: 400;
-  line-height: 1.5;
+.icon-close {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-mob-btn:hover,
+.menu-mob-btn:focus {
+  background-color: #404bbf;
+  border: none;
+  fill: #ffffff;
+}
+
+.menu-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.menu-link {
+  color: #2e2f42;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
   letter-spacing: 0.02em;
-  color: #434455;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contact-link:hover,
-.contact-link:focus {
+.menu-link-studio {
   color: #404bbf;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: #404bbf;
+}
+
+.menu-contact-list {
+  margin-bottom: 48px;
+}
+
+.menu-contact-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.menu-contact-link {
+  color: #434455;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-contact-number {
+  color: #404bbf;
+}
+
+.menu-contact-link:hover,
+.menu-contact-link:focus {
+  color: #404bbf;
+}
+
+.menu-socials {
+  display: flex;
+  gap: 40px;
+}
+
+.menu-socials-item {
+  width: 40px;
+  height: 40px;
+}
+
+.menu-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-icon-link:hover,
+.menu-icon-link:focus {
+  background-color: #404bbf;
+}
+
+.socials-icon {
+  fill: #f4f4fd;
 }
 
 /* -------------------- HERO -----------------------*/
@@ -303,7 +382,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
   width: 100%;
   height: 100%;
   background-color: #4d5ae5;
@@ -572,12 +651,6 @@ body {
   pointer-events: none;
 }
 
-.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-}
-
 .modal {
   padding: 72px 24px 24px 24px;
   position: absolute;
@@ -783,6 +856,94 @@ body {
     padding: 0 16px;
   }
 
+  /*=========================== HEDER =========================*/
+
+  .header-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: 120px;
+  }
+
+  .header-list {
+    display: flex;
+  }
+
+  .header-item:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .header-link {
+    position: relative;
+    display: block;
+    padding: 24px 0;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .header-link:hover,
+  .header-link:focus {
+    color: #404bbf;
+  }
+
+  .link-studio {
+    color: #404bbf;
+  }
+
+  .link-studio::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: #404bbf;
+    display: block;
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .contact {
+    font-style: normal;
+    margin-left: auto;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact-link {
+    display: block;
+    padding: 6px 0;
+    color: #434455;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contact-link:hover,
+  .contact-link:focus {
+    color: #404bbf;
+  }
+
+  /* ==================== Header-MENU ====================*/
+
   /*======================== HERO ========================*/
 
   .section-hero {
@@ -897,10 +1058,28 @@ body {
     padding: 120px 0;
   }
 
-  /*======================== HERO ========================*/
+  .logo {
+    margin-right: 76px;
+  }
 
-  .hero-title {
-    margin-bottom: 48px;
+  .contact {
+    margin-left: auto;
+  }
+
+  .contact-list {
+    flex-direction: row;
+  }
+
+  .contact-item:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  .contact-link {
+    display: block;
+    padding: 24px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
   }
 
   /*================================ DESC ======================*/
