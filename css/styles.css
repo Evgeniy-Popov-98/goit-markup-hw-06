@@ -42,12 +42,18 @@ body {
   padding: 96px 0;
 }
 
-.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
-
 /* ----------------------- HEADER ------------------------*/
 
 .header {
@@ -237,10 +243,24 @@ body {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/section1/people-office.jpg);
+    url(../images/section1/bc-hero-mob/dark-bg-mob.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .section-hero {
+    padding: 72px 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/section1/bc-hero-mob/dark-bg-mob-2x.jpg);
+  }
 }
 
 .hero-title {
@@ -585,6 +605,7 @@ body {
   border: 1px solid #fff;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   background-color: transparent;
+  outline: transparent;
 
   color: #fff;
   font-size: 12px;
@@ -597,6 +618,11 @@ body {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
+}
+
+.footer-form-input:hover,
+.footer-form-input:focus {
+  border-color: #4d5ae5;
 }
 
 .footer-form-bnt {
@@ -647,11 +673,17 @@ body {
   pointer-events: none;
 }
 
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
 .modal {
-  padding: 72px 24px 24px 24px;
+  padding: 72px 16px 24px 16px;
   position: absolute;
-  width: 408px;
-  min-height: 584px;
+  width: 288px;
+  max-height: 623px;
   border-radius: 4px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -784,15 +816,27 @@ body {
 }
 
 .modal-label-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-text {
   color: #8e8f99;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
 }
 
+.checkbox-link {
+  color: #4d5ae5;
+  line-height: 1.33;
+  text-decoration-line: underline;
+}
+
 .checkbox-privacy {
-  width: 16px;
-  height: 16px;
+  margin-right: 8px;
+  min-width: 16px;
+  min-height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -808,12 +852,6 @@ body {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
-}
-
-.checkbox-link {
-  color: #4d5ae5;
-  line-height: 1.33;
-  text-decoration-line: underline;
 }
 
 .form-btn {
@@ -935,12 +973,32 @@ body {
     color: #404bbf;
   }
 
-  /* ==================== Header-MENU ====================*/
-
   /*======================== HERO ========================*/
 
   .section-hero {
     padding: 112px 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/section1/bc-hero-tab/dark-bg-tab.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .section-hero {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/section1/bc-hero-tab/dark-bg-tab-2x.jpg);
+    }
   }
 
   .hero-title {
@@ -969,12 +1027,9 @@ body {
 
   .container-list {
     max-width: 552px;
-    margin: 0 auto;
   }
 
   .team-list {
-    min-width: 264px;
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 64px 24px;
@@ -994,7 +1049,6 @@ body {
 
   .container-footer {
     min-width: 552px;
-    display: flex;
     flex-direction: row;
     justify-content: left;
     flex-wrap: wrap;
@@ -1023,21 +1077,12 @@ body {
   .footer-box-form {
     text-align: left;
   }
-}
 
-@media not screen and (min-width: 1158px) {
-  .visually-hidden,
-  .desc-title {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  /*=========================== MODAL-786px ===============*/
+  .modal {
+    padding: 72px 24px 24px 24px;
+    width: 408px;
+    min-height: 584px;
   }
 }
 
@@ -1051,12 +1096,10 @@ body {
     padding: 120px 0;
   }
 
+  /*=========================== HEDER =========================*/
+
   .logo {
     margin-right: 76px;
-  }
-
-  .contact {
-    margin-left: auto;
   }
 
   .contact-list {
@@ -1068,11 +1111,38 @@ body {
   }
 
   .contact-link {
-    display: block;
     padding: 24px 0;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+  }
+
+  /*======================== HERO ========================*/
+
+  .section-hero {
+    padding: 188px 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url(../images/section1/bc-hero/people-office.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .section-hero {
+      background-image: linear-gradient(
+          to bottom,
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/section1/bc-hero/people-office-2x.jpg);
+    }
   }
 
   /*================================ DESC ======================*/
@@ -1091,25 +1161,12 @@ body {
   }
 
   .desc-list {
-    flex-direction: row;
     flex-wrap: nowrap;
     gap: 24px;
   }
 
   .desc-item {
     max-width: 264px;
-  }
-
-  .box-desc {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 112px;
-    margin-bottom: 8px;
-    border-radius: 4px;
-    border: 1px solid #8e8f99;
-    background: #f4f4fd;
   }
 
   .desc-subtitle {
@@ -1166,11 +1223,20 @@ body {
     text-align: left;
   }
 
-  .footer-box-form {
-    text-align: left;
-  }
+  /* ====================== MODAL-1158px ========================*/
+}
 
-  .footer-form {
-    flex-direction: row;
+@media not screen and (min-width: 1158px) {
+  .box-desc {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }

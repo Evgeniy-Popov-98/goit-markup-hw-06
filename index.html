@@ -42,7 +42,7 @@
 			</address>
 		</div>
 
-		<div class="menu-mob is-open">
+		<div class="menu-mob ">
 			<nav class="menu-navig">
 				<button type="button" class="menu-mob-btn ">
 					<svg class="icon icon-close" width="8" height="8">
@@ -110,10 +110,10 @@
 
 		<section class="section section-desc">
 			<div class="container container-desc">
-				<h2 class="desc-title">Benefits</h2>
+				<h2 class="desc-title visually-hidden">Benefits</h2>
 				<ul class="desc-list">
 					<li class="desc-item">
-						<div class="box-desc visually-hidden">
+						<div class="box-desc">
 							<svg class="icon icon-antenna" width="64" height="64">
 								<use href="./images/icons.svg#icon-antenna">
 								</use>
@@ -126,7 +126,7 @@
 						</p>
 					</li>
 					<li class="desc-item">
-						<div class="box-desc visually-hidden">
+						<div class="box-desc">
 							<svg class="icon icon-clock" width="64" height="64">
 								<use href="./images/icons.svg#icon-clock">
 								</use>
@@ -139,7 +139,7 @@
 						</p>
 					</li>
 					<li class="desc-item">
-						<div class="box-desc visually-hidden">
+						<div class="box-desc">
 							<svg class="icon icon-diagram" width="64" height="64">
 								<use href="./images/icons.svg#icon-diagram">
 								</use>
@@ -152,7 +152,7 @@
 						</p>
 					</li>
 					<li class="desc-item">
-						<div class="box-desc visually-hidden">
+						<div class="box-desc">
 							<svg class="icon icon-astronaut" width="64" height="64">
 								<use href="./images/icons.svg#icon-astronaut">
 								</use>
@@ -174,7 +174,10 @@
 				<div class="container-list">
 					<ul class="team-list">
 						<li class="team-item">
-							<img src="./images/section2/mark.jpg" alt="Photo of a man" width="264" height="260" />
+							<img srcset="
+							./images/section2/mark.jpg 1x,
+							./images/section2/mark-2x.jpg 2x
+						  	" src="./images/section2/mark.jpg" alt="Photo of a man" width="264" height="260" />
 							<div class="team-content">
 								<h3 class="team-subtitle">Mark Guerrero</h3>
 								<p class="team-text">Product Designer</p>
@@ -211,7 +214,10 @@
 							</div>
 						</li>
 						<li class="team-item">
-							<img src="./images/section2/tom.jpg" alt="Photo of a man" width="264" height="260" />
+							<img srcset="
+							./images/section2/tom.jpg 1x,
+							./images/section2/tom-2x.jpg 2x
+						  	" src="./images/section2/tom.jpg" alt="Photo of a man" width="264" height="260" />
 							<div class="team-content">
 								<h3 class="team-subtitle">Tom Ford</h3>
 								<p class="team-text">Frontend Developer</p>
@@ -248,7 +254,10 @@
 							</div>
 						</li>
 						<li class="team-item">
-							<img src="./images/section2/camila.jpg" alt="Photo of a girl" width="264" height="260" />
+							<img srcset="
+							./images/section2/camila.jpg 1x,
+							./images/section2/camila-2x.jpg 2x
+						  	" src="./images/section2/camila.jpg" alt="Photo of a girl" width="264" height="260" />
 							<div class="team-content">
 								<h3 class="team-subtitle">Camila Garcia</h3>
 								<p class="team-text">Marketing</p>
@@ -285,7 +294,10 @@
 							</div>
 						</li>
 						<li class="team-item">
-							<img src="./images/section2/daniel.jpg" alt="Photo of a man" width="264" height="260" />
+							<img srcset="
+							./images/section2/daniel.jpg 1x,
+							./images/section2/daniel-2x.jpg 2x
+						  	" src="./images/section2/daniel.jpg" alt="Photo of a man" width="264" height="260" />
 							<div class="team-content">
 								<h3 class="team-subtitle">Daniel Wilson</h3>
 								<p class="team-text">UI Designer</p>
@@ -332,8 +344,19 @@
 				<ul class="portfolio-list">
 					<li class="portfolio-item">
 						<div class="overlay-porfolio">
-							<img src="./images/section3/banking.jpg" alt="Appearance of banking applications"
-								width="360" height="300">
+							<picture class="portfolio-picture">
+								<source
+									srcset="./images/section3/lep/banking.jpg 1x, ./images/section3/lep/banking-2x.jpg 2x"
+									media="(min-width: 1166px)" />
+								<source
+									srcset="./images/section3/tab/banking.jpg 1x, ./images/section3/tab/banking-2x.jpg 2x"
+									media="(min-width: 768px)" />
+								<source
+									srcset="./images/section3/mob/banking.jpg 1x, ./images/section3/mob/banking-2x.jpg 2x"
+									media="(max-width: 767px)" />
+								<img src="./images/section3/lep/banking.jpg" alt="Appearance of banking applications"
+									width="360" height="300">
+							</picture>
 							<p class="overlay-text">14 Stylish and User-Friendly App Design Concepts · Task Manager
 								App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
 							</p>
@@ -344,8 +367,20 @@
 						</div>
 					</li>
 					<li class="portfolio-item">
-						<div class="overlay-porfolio"><img src="./images/section3/payment.jpg" alt="Free payment"
-								width="360" height="300">
+						<div class="overlay-porfolio">
+							<picture class="portfolio-picture">
+								<source
+									srcset="./images/section3/lep/payment.jpg 1x, ./images/section3/lep/payment-2x.jpg 2x"
+									media="(min-width: 1166px)" />
+								<source
+									srcset="./images/section3/tab/payment.jpg 1x, ./images/section3/tab/payment-2x.jpg 2x"
+									media="(min-width: 768px)" />
+								<source
+									srcset="./images/section3/mob/payment.jpg 1x, ./images/section3/mob/payment-2x.jpg 2x"
+									media="(max-width: 767px)" />
+								<img src="./images/section3/lep/payment.jpg" alt="Free payment" width="360"
+									height="300">
+							</picture>
 							<p class="overlay-text">14 Stylish and User-Friendly App Design Concepts · Task Manager
 								App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
 							</p>
@@ -356,8 +391,20 @@
 						</div>
 					</li>
 					<li class="portfolio-item">
-						<div class="overlay-porfolio"><img src="./images/section3/meditaion.jpg" alt="Laptop with phone"
-								width="360" height="300">
+						<div class="overlay-porfolio">
+							<picture class="portfolio-picture">
+								<source
+									srcset="./images/section3/lep/meditaion.jpg 1x, ./images/section3/lep/meditaion-2x.jpg 2x"
+									media="(min-width: 1166px)" />
+								<source
+									srcset="./images/section3/tab/meditaion.jpg 1x, ./images/section3/tab/meditaion-2x.jpg 2x"
+									media="(min-width: 768px)" />
+								<source
+									srcset="./images/section3/mob/meditaion.jpg 1x, ./images/section3/mob/meditaion-2x.jpg 2x"
+									media="(max-width: 767px)" />
+								<img src="./images/section3/lep/meditaion.jpg" alt="Laptop with phone" width="360"
+									height="300">
+							</picture>
 							<p class="overlay-text">14 Stylish and User-Friendly App Design Concepts · Task Manager
 								App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
 						</div>
@@ -368,7 +415,15 @@
 					</li>
 					<li class="portfolio-item">
 						<div class="overlay-porfolio">
-							<img src="./images/section3/taxi.jpg" alt="Taxi interior" width="360" height="300">
+							<picture class="portfolio-picture">
+								<source srcset="./images/section3/lep/taxi.jpg 1x, ./images/section3/lep/taxi-2x.jpg 2x"
+									media="(min-width: 1166px)" />
+								<source srcset="./images/section3/tab/taxi.jpg 1x, ./images/section3/tab/taxi-2x.jpg 2x"
+									media="(min-width: 768px)" />
+								<source srcset="./images/section3/mob/taxi.jpg 1x, ./images/section3/mob/taxi-2x.jpg 2x"
+									media="(max-width: 767px)" />
+								<img src="./images/section3/lep/taxi.jpg" alt="Taxi interior" width="360" height="300">
+							</picture>
 							<p class="overlay-text">14 Stylish and User-Friendly App Design Concepts · Task
 								Manager App
 								· Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
@@ -379,8 +434,20 @@
 						</div>
 					</li>
 					<li class="portfolio-item">
-						<div class="overlay-porfolio"><img src="./images/section3/screen.jpg"
-								alt="Phone with different pictures" width="360" height="300">
+						<div class="overlay-porfolio">
+							<picture class="portfolio-picture">
+								<source
+									srcset="./images/section3/lep/screen.jpg 1x, ./images/section3/lep/screen-2x.jpg 2x"
+									media="(min-width: 1166px)" />
+								<source
+									srcset="./images/section3/tab/screen.jpg 1x, ./images/section3/tab/screen-2x.jpg 2x"
+									media="(min-width: 768px)" />
+								<source
+									srcset="./images/section3/mob/screen.jpg 1x, ./images/section3/mob/screen-2x.jpg 2x"
+									media="(max-width: 767px)" />
+								<img src="./images/section3/lep/screen.jpg" alt="Phone with different pictures"
+									width="360" height="300">
+							</picture>
 							<p class="overlay-text">14 Stylish and User-Friendly App Design Concepts · Task
 								Manager App
 								· Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
@@ -392,8 +459,19 @@
 					</li>
 					<li class="portfolio-item">
 						<div class="overlay-porfolio">
-							<img src="./images/section3/online.jpg" alt="A smiling girl with a phone" width="360"
-								height="300">
+							<picture class="portfolio-picture">
+								<source
+									srcset="./images/section3/lep/online.jpg 1x, ./images/section3/lep/online-2x.jpg 2x"
+									media="(min-width: 1166px)" />
+								<source
+									srcset="./images/section3/tab/online.jpg 1x, ./images/section3/tab/online-2x.jpg 2x"
+									media="(min-width: 768px)" />
+								<source
+									srcset="./images/section3/mob/online.jpg 1x, ./images/section3/mob/online-2x.jpg 2x"
+									media="(max-width: 767px)" />
+								<img src="./images/section3/lep/online.jpg" alt="A smiling girl with a phone"
+									width="360" height="300">
+							</picture>
 							<p class="overlay-text">14 Stylish and User-Friendly App Design Concepts · Task
 								Manager App
 								· Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
@@ -524,7 +602,9 @@
 								<use href="./images/icons.svg#icon-property"></use>
 							</svg>
 						</span>
-						I accept the terms and conditions of the <a class="checkbox-link" href="">Privacy Policy</a>
+						<div class="checkbox-text">
+							I accept the terms and conditions of the <a class="checkbox-link" href="">Privacy Policy</a>
+						</div>
 					</label>
 				</div>
 
